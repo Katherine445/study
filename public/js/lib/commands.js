@@ -7,7 +7,6 @@ import {callr, findr} from '../lib/collectionUtils';
 import {dateParse} from '../lib/dates';
 import {take, keys, values} from 'lodash';
 
-
 export function parseCommand(cmd) {
   if (!cmd || cmd.trim() == '') return [];
 }
@@ -100,8 +99,18 @@ export function validateCommand(cmd, state) {
     }
   }
 
+  /*console.log("matches: ");
+  console.log(take(matches.sort((a, b) => b.relevance - a.relevance), 1)
+                .map((o) => {
+                  console.log("Obj: " + o.action.substring(0,o.action.indexOf(o.action.match(/[A-Z]/))));
+                  console.log(o.action.substring(0,o.action.indexOf(o.action.match(/[A-Z]/))));
+                }
+    ));*/
+
   return take(matches.sort((a, b) => b.relevance - a.relevance), 3) // sorted by relevance and take 3 top
     .map((o) => {
+      /*console.log('action: ');
+      console.log(o.action.substring(0,o.action.indexOf(o.action.match(/[A-Z]/))));*/
       const signature = getSignatureForAction(o.action);
       return new Command(
         o.action,
@@ -303,4 +312,63 @@ export function getHint(commands) {
   // }
   //
   // return commands.join(', ');
+}
+
+
+/**
+ * written by katherine 27.07
+ * function of finding equals in array
+ * returns string to complete the command
+ */
+
+export function getAutocomplete(cmd, state) {
+  
+  var matches = [];
+	var res = cmd;
+
+  for (const action in TodoActions) {
+
+    const result = matchCommand(action, cmd);
+    if (result.relevance > 0) {
+      result.action = action;
+      matches.push(result);
+    }
+  }
+
+  var repeates = 0;
+
+  matches = take(matches.sort((a, b) => b.relevance - a.relevance), 3);
+  /**
+   * first element will have max relevance
+   */
+  var maxRelevanse = matches[0].relevance;
+  /**
+   * thats why it can be the most relevanced word
+   */
+  const maxRelevantedWord = matches[0].action.substring(0,matches[0].action.indexOf(matches[0].action.match(/[A-Z]/)))
+  /**
+   * count of repeates
+   */
+  matches.map((o) => {
+    if ((o.relevance == maxRelevanse) && (o.action.substring(0,o.action.indexOf(o.action.match(/[A-Z]/))) == maxRelevantedWord)){
+      repeates++;
+    }
+  })
+  /**
+   * if there is more than one repeat
+   * we return only part of function name
+   */
+  if(repeates > 1){
+    res = maxRelevantedWord; 
+  }else
+  /**
+   * otherwise, we return full func name
+   */
+   if (repeates == 1){
+     
+    res = matches[0].action;
+  }
+  // console.log("result : " + res);
+
+  return res;
 }
