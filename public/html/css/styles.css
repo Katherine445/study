@@ -1,0 +1,251 @@
+#app {
+    font-family: Tahoma, sans-serif;
+    font-size: 1.1em;
+}
+
+.odd {
+  background-color: #F7F9FE;
+}
+
+.even {
+  background-color: #ECF1F2;
+}
+
+.todo-view {
+    width: 100%;
+    /*height: 500px;*/
+}
+
+.todo-view .command input{
+  width: calc(100% - 8px);
+}
+
+/*.todos div {
+    padding: 3px 0px 3px;
+}*/
+
+.todos .complete {
+    text-decoration: line-through;
+}
+
+.todos .item-selected {
+    background-color: #BED2D9;
+}
+
+.todos .item-last {
+  background-color: #D5D5D5;
+}
+
+.todos .item-hover {
+  background-color: #BED2D9;
+}
+
+.todos .item-above {
+  background-color: #ECF1F2;
+  border-top: 3px solid #BED2D9;
+  padding-top: 2px;
+}
+
+.todos .item-below {
+  background-color: #ECF1F2;
+  padding-bottom: 2px;
+  border-bottom: 3px solid #BED2D9;
+}
+
+.todos .filters li.active {
+	font-weight: bold;
+}
+
+.todos ul.filters {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.todos .filters li {
+	display: inline-block;
+	padding: 0px 5px;
+	text-transform: capitalize;
+}
+
+.howto {
+  font-size: 0.8em;
+  padding-top: 20px;
+  display: none;
+}
+
+.todos .all-items {
+  /*margin-left: -20px;*/
+}
+
+.todos .all-items .items {
+  padding-left: 16px;
+}
+
+.all-items input[type="text"]{
+  width: calc(100% - 50px);
+}
+
+.item {
+  padding: 5px;
+  display: block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.item label .context, .item label .contact {
+  border-radius: 3px;
+  padding: 0px 4px 0px 4px;
+}
+
+.item label .contact {
+  background-color: #98E4FF;
+}
+
+.item label .context {
+  background-color: #FFFE98;
+}
+
+.item .wrap {
+  width: 100%;
+  display: table;
+}
+
+.item .hint {
+  font-size: 0.6em;
+  text-align: right;
+  width: 98%;
+}
+
+.command .hint {
+  font-size: 0.7em;
+  padding-top: 10px;
+}
+
+.item .block, .item .control {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.item .block {
+  width: 40px;
+}
+
+.item textarea {
+  height: 200px;
+  width: 98%;
+}
+
+.item .date {
+  float: right;
+  text-align: center;
+  font-size: 0.6em;
+  height: 20px;
+  top:-2px;
+  position: relative;
+
+  /*
+  right: 0px;
+  display: inline-block;
+  background: url("../img/calendar.png") no-repeat;
+  padding-left: 23px;
+  */
+}
+
+.item .expired {
+  background-color: #FFE4DF;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.item .start, .item .end {
+  height: 14px;
+}
+
+.item .date .due {
+  font-size: 1.7em;
+}
+
+.item .today {
+  background-color: #FFFCDF;
+  border-radius: 2px;
+  padding: 3px;
+}
+
+.item .in-progress {
+  background-color: #DFFFE4;
+  border-radius: 2px;
+  padding: 3px;
+}
+
+.item .note {
+  padding: 10px 0px 10px 0px;
+  font-size: 0.8em;
+  color: #222222;
+}
+
+.icon-note {
+  background: url("../img/note.png");
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
+}
+
+.icon-empty {
+  display: inline-block;
+  width: 20px;
+  height: 16px;
+}
+
+.icon-open {
+  display: inline-block;
+  background: url("../img/32px.png") no-repeat -34px -7px;
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.icon-closed {
+  display: inline-block;
+  background: url("../img/32px.png") no-repeat -2px -7px;
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.help {
+  cursor: help;
+  text-decoration: none;
+}
+
+.debug {
+  font-size: 10px;
+  /*display: none;*/
+}
+
+.date-picker {
+  margin-left: 40px;
+  font-size: 0.8em;
+}
+
+.date-picker p {
+  font-size: 0.8em;
+}
+
+.date-picker p.correct {
+  font-weight: bold;
+}
+
+.error {
+  margin: 5px;
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+.all-items input[type="text"]{
+	    width: calc(100% - 50px);
+}

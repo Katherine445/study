@@ -1,0 +1,9 @@
+# project specific files and directories
+.idea
+test.bat
+public/html/test.html
+public/html/test.md
+
+docs
+dist
+node_modules
