@@ -43,7 +43,6 @@ export default class ItemDatePicker extends Component {
         e.preventDefault();
         break;
       case 'Escape':
-        //this.props.onAdd(this.refs.ctrlInput.value);
         this.props.onCancel();
         this.refs.ctrlInput.value = '';
         e.stopPropagation();

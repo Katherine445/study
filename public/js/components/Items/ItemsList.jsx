@@ -151,7 +151,7 @@ export default class ItemsList extends Component {
                     date={todo.dateStart}
                     maxDate={todo.dateEnd}
                     onUpdate={(date) => {
-                      // console.info(date); // dispatch update
+                      console.info(date); // dispatch update
                       this.context.store.dispatch(TodoAction.updateDateStart(todo.id, date));
                       this.updateCancelHandler(todo.id);
                     }}
@@ -162,7 +162,7 @@ export default class ItemsList extends Component {
                     date={todo.dateEnd}
                     minDate={todo.dateStart}
                     onUpdate={(date) => {
-                      // console.info(date); // dispatch update
+                      console.info(date); // dispatch update
                       this.context.store.dispatch(TodoAction.updateDateEnd(todo.id, date));
                       this.updateCancelHandler(todo.id);
                     }}
