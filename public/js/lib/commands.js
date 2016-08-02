@@ -345,7 +345,7 @@ export function getAutocomplete(cmd, state) {
   /**
    * thats why it can be the most relevanced word
    */
-  const maxRelevantedWord = matches[0].action.substring(0,matches[0].action.indexOf(matches[0].action.match(/[A-Z]/)))
+  const maxRelevantedWord = matches[0].action.substring(0,matches[0].action.indexOf(matches[0].action.match(/[A-Z]/)));
   /**
    * count of repeates
    */
